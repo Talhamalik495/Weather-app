@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="icon" href="./images/OIP.jpeg">
+    <!-- icon link font awesome  -->
+    <script src="https://kit.fontawesome.com/186630982e.js" crossorigin="anonymous"></script>
+    <!-- Google fonts link  -->
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="maincontainer">
+        <div class="timemaincontainer">
+
+            <h1 class="heading_weather_app">WEATHER APP</h1>
+            <div class="timecontainer">
+                <span id="zero"></span>
+                <span id="time"></span>::
+                <span id="ampm"></span>::
+                <span id="zero1minute"></span>
+                <span id="minute"></span>::
+                <span id="zero2_second"></span>
+                <div id="second"></div>
+            </div>
+        </div>
+        <div class="weather_weather_container">
+            <form id="form" class="form_style">
+                <input type="text" placeholder="Enter your city" id="city_input" class="city_input_style">
+                <button type="submit" id="submit_button" class="submit_button_style">
+                    <img src="./images/download-removebg-preview.png" width="100%"></button>
+            </form>
+            <div class="htmladdcontainer">
+                <br>
+                <div class="containerheading">
+                    <h3>Lahore</h3>
+                    <h3>31 <sup>0</sup></h3>
+                    <h3>Overcast Clouds</h3>
+                    <img src="./images/Sun-And-Cloud-PNG-Pic.png" alt="" width="10%" height="20%">
+                </div>
+                <div class="containerraincontainer">
+                    <div class="clouds">
+                        <h3>Clouds</h3>
+                        <h4 class="style_icon"><i class="fa-solid fa-cloud"></i></h4>
+                        <h3>98%</h3>
+                    </div>
+                    <div class="humidity">
+                        <h3>Humitidity</h3>
+                        <h4 class="style_icon"><i class="fa-solid fa-droplet"></i></h4>
+                        <h3>55%</h3>
+                    </div>
+                    <div class="pressure">
+                        <h3>Pressure</h3>
+                        <h4 class="style_icon"><i class="fa-solid fa-gauge"></i></h4>
+                        <h3>1001hpa</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" last_heading_container">
+            <h2>copy right @ Talhamalik495</h2>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
