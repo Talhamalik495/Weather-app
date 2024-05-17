@@ -30,33 +30,34 @@
         </div>
         <div class="weather_weather_container">
             <form id="form" class="form_style">
-                <input type="text" placeholder="Enter your city" id="city_input" class="city_input_style">
+                <input type="text" placeholder="Enter your city" class="city_input_style" id="city_input">
                 <button type="submit" id="submit_button" class="submit_button_style">
                     <img src="./images/download-removebg-preview.png" width="100%"></button>
             </form>
             <div class="htmladdcontainer">
                 <br>
                 <div class="containerheading">
-                    <h3>Lahore</h3>
-                    <h3>31 <sup>0</sup></h3>
-                    <h3>Overcast Clouds</h3>
-                    <img src="./images/Sun-And-Cloud-PNG-Pic.png" alt="" width="10%" height="20%">
+                    <h4 id="date">Dates</h4>
+                    <h3 id="name">Lahore</h3>
+                    <h3 id="temprature">31 <sup>0</sup></h3>
+                    <h3 id="sky">Overcast Clouds</h3>
+                    <!-- <i class="fa-solid fa-cloud-moon"></i> -->
                 </div>
                 <div class="containerraincontainer">
                     <div class="clouds">
-                        <h3>Clouds</h3>
                         <h4 class="style_icon"><i class="fa-solid fa-cloud"></i></h4>
-                        <h3>98%</h3>
+                        <h3 id="wind">4KM/H</h3>
+                        <h3>Wind</h3>
                     </div>
                     <div class="humidity">
-                        <h3>Humitidity</h3>
                         <h4 class="style_icon"><i class="fa-solid fa-droplet"></i></h4>
-                        <h3>55%</h3>
+                        <h3 id="humidity">55%</h3>
+                        <h3>Humitidity</h3>
                     </div>
                     <div class="pressure">
-                        <h3>Pressure</h3>
                         <h4 class="style_icon"><i class="fa-solid fa-gauge"></i></h4>
-                        <h3>1001hpa</h3>
+                        <h3 id="visibility">4Km/H</h3>
+                        <h3>Visibility</h3>
                     </div>
                 </div>
             </div>

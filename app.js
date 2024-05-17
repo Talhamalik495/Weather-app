@@ -55,12 +55,53 @@ setInterval(() => {
 }, 1000);
 // Weather javascript start 
 // weather api 
-let apiKEY = '98092c54b629e85a8a8adc138825a7b2'
-let apiURL = 'https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}'
-//  weather veriables javascript 
-let form = document.getElementById("form")
-// submit event 
+
+const apiKEY = `98092c54b629e85a8a8adc138825a7b2`
+// const city = "karachi"
+async function fetchweatherapi(city) {
+    try {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKEY}`)
+        if (!response.ok) {
+            throw new Error("Unable to fetch weather data")
+        }
+        const data = await response.json();
+        console.log(data);
+        updateweatherui(data)
+    }
+    catch (error) {
+        console.error(error)
+    }
+}
+// fetchweatherapi()
+// //  weather veriables javascript
+let namea = document.getElementById("name")
+let temp = document.getElementById("temprature")
+let winda = document.getElementById("wind")
+let humiditya = document.getElementById("humidity")
+let visibilitya = document.getElementById("visibility")
+let skya = document.getElementById("sky")
+let datea = document.getElementById("date")
+const updateweatherui = (solvedata) => {
+    namea.innerHTML = solvedata.name;
+    skya.innerHTML = solvedata.weather[0].description;
+    temp.innerHTML = Math.round(solvedata.main.temp);
+    winda.innerHTML = `${solvedata.wind.speed} km/h`;
+    humiditya.innerHTML = `${solvedata.main.humidity}%`;
+    visibilitya.innerHTML = `${solvedata.visibility / 1000}km`;
+    let orignaldate = new Date();
+    datea.innerHTML = orignaldate.toDateString()
+
+}
+const form = document.getElementById("form")
+const input = document.getElementById("city_input")
+// submit event
 form.addEventListener("submit", (event) => {
     event.preventDefault()
+    const city = input.value
+    if (city !== '') {
+        fetchweatherapi(city)
+        input.value = "";
+    }
+    // updateweatherui(city)
 
 })
