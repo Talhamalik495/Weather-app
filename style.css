@@ -11,12 +11,14 @@ body {
 }
 
 .maincontainer {
+    /* margin-top: 50px; */
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     row-gap: 20px;
     color: white;
     font-family: "Poetsen One", sans-serif;
@@ -25,13 +27,20 @@ body {
 }
 
 .weather_weather_container {
+    margin-top: 70px;
+    margin-bottom: 100px;
     width: 40%;
     height: 90%;
     padding: 40px;
     border: 2px solid white;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
 
 .form_style {
     height: 18%;
@@ -109,6 +118,7 @@ body {
 }
 
 .timemaincontainer {
+    padding-top: 50px;
     padding-left: 35%;
     height: 10%;
     width: 100%;
@@ -310,6 +320,7 @@ body {
     }
 
     .clouds {
+        padding: 10%;
         width: 35%;
         font-size: 13px;
     }
@@ -405,19 +416,26 @@ body {
         padding-top: 40px;
     }
 
+    .containerraincontainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     .clouds {
-        width: 37%;
+        width: 50%;
         font-size: 10px;
     }
 
     .humidity {
-        width: 37%;
+        width: 50%;
         font-size: 10px;
 
     }
 
     .pressure {
-        width: 37%;
+        width: 50%;
         font-size: 10px;
 
     }
@@ -431,6 +449,15 @@ body {
     }
 
     .heading_weather_app {
+        font-size: 10px;
+    }
+
+    .city_input_style {
+        width: 70%;
+
+    }
+
+    ::placeholder {
         font-size: 10px;
     }
 }

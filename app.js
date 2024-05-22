@@ -84,7 +84,7 @@ let datea = document.getElementById("date")
 const updateweatherui = (solvedata) => {
     namea.innerHTML = solvedata.name;
     skya.innerHTML = solvedata.weather[0].description;
-    temp.innerHTML = Math.round(solvedata.main.temp);
+    temp.innerHTML = Math.round(`${solvedata.main.temp}C0`);
     winda.innerHTML = `${solvedata.wind.speed} km/h`;
     humiditya.innerHTML = `${solvedata.main.humidity}%`;
     visibilitya.innerHTML = `${solvedata.visibility / 1000}km`;
