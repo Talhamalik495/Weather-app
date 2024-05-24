@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url(./images/R.jpeg);
+    background-image: url(./images1/R.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -30,7 +30,7 @@ body {
     margin-top: 70px;
     margin-bottom: 100px;
     width: 40%;
-    height: 90%;
+    height: 100%;
     padding: 40px;
     border: 2px solid white;
     background-color: rgba(0, 0, 0, 0.5);

@@ -69,7 +69,7 @@ async function fetchweatherapi(city) {
         updateweatherui(data)
     }
     catch (error) {
-        console.error(error)
+        console.log(error)
     }
 }
 // fetchweatherapi()
@@ -80,16 +80,48 @@ let winda = document.getElementById("wind")
 let humiditya = document.getElementById("humidity")
 let visibilitya = document.getElementById("visibility")
 let skya = document.getElementById("sky")
+let img = document.getElementById("imageschange")
 let datea = document.getElementById("date")
 const updateweatherui = (solvedata) => {
     namea.innerHTML = solvedata.name;
     skya.innerHTML = solvedata.weather[0].description;
-    temp.innerHTML = Math.round(`${solvedata.main.temp}C0`);
+    temp.innerHTML = solvedata.main.temp;
     winda.innerHTML = `${solvedata.wind.speed} km/h`;
     humiditya.innerHTML = `${solvedata.main.humidity}%`;
     visibilitya.innerHTML = `${solvedata.visibility / 1000}km`;
     let orignaldate = new Date();
     datea.innerHTML = orignaldate.toDateString()
+    if (solvedata.weather[0].main == "Clouds") {
+        img.src = "images1/clouds.png"
+    } else if (solvedata.weather[0].main == "Clear") {
+        img.src = "images1/clear (1).png"
+
+    }
+    else if (solvedata.weather[0].main == "Rain") {
+        img.src = "images1/rain.png"
+
+    }
+    else if (solvedata.weather[0].main == "Drizzle") {
+        img.src = "images1/drizzle.png"
+
+    }
+    else if (solvedata.weather[0].main == "Mist") {
+        img.src = "images1/mist.png"
+
+    }
+    else if (solvedata.weather[0].main == "Smoke") {
+        img.src = "images1/smoke.png"
+
+    }
+    else if (solvedata.weather[0].main == "Haze") {
+        img.src = "images1/haze.png"
+
+    }
+    else if (solvedata.weather[0].main == "Dust") {
+        img.src = "images1/th__1_-removebg-preview (1).png"
+
+    }
+
 
 }
 const form = document.getElementById("form")
