@@ -79,11 +79,11 @@ async function fetchweatherapi(city) {
             throw new Error("Unable to fetch weather data")
         }
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         updateweatherui(data)
     }
     catch (error) {
-        console.log(error)
+        // console.log(error)
         swal({
             title: "Error!",
             text: "City is not Found!",
