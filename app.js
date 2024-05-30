@@ -55,12 +55,26 @@ setInterval(() => {
 }, 1000);
 // Weather javascript start 
 // weather api 
-
+// let meassage_save = meassge1.innerHTML = ""
+let meassge1 = document.getElementById("meassage")
 const apiKEY = `98092c54b629e85a8a8adc138825a7b2`
 // const city = "karachi"
 async function fetchweatherapi(city) {
     try {
+        namea.innerHTML = "";
+        skya.innerHTML = "";
+        temp.innerHTML = "";
+        winda.innerHTML = "";
+        humiditya.innerHTML = "";
+        visibilitya.innerHTML = "";
+        // img.src = ""
+        // meassge1.innerHTML =;
+        meassge1.classList = "loader"
+
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKEY}`)
+        // meassge1.innerHTML = ""
+        meassge1.classList = ""
+
         if (!response.ok) {
             throw new Error("Unable to fetch weather data")
         }
@@ -70,10 +84,19 @@ async function fetchweatherapi(city) {
     }
     catch (error) {
         console.log(error)
+        swal({
+            title: "Error!",
+            text: "City is not Found!",
+            icon: "error",
+            // button: "Aww yiss!",
+        });
     }
+
 }
 // fetchweatherapi()
 // //  weather veriables javascript
+// let btn = document.getElementById("submit_button")
+// btn.disabled = true
 let namea = document.getElementById("name")
 let temp = document.getElementById("temprature")
 let winda = document.getElementById("wind")
@@ -85,7 +108,7 @@ let datea = document.getElementById("date")
 const updateweatherui = (solvedata) => {
     namea.innerHTML = solvedata.name;
     skya.innerHTML = solvedata.weather[0].description;
-    temp.innerHTML = solvedata.main.temp;
+    temp.innerHTML = `${solvedata.main.temp}°C`;
     winda.innerHTML = `${solvedata.wind.speed} km/h`;
     humiditya.innerHTML = `${solvedata.main.humidity}%`;
     visibilitya.innerHTML = `${solvedata.visibility / 1000}km`;
@@ -137,3 +160,5 @@ form.addEventListener("submit", (event) => {
     // updateweatherui(city)
 
 })
+
+
